@@ -1,0 +1,52 @@
+1) через командную строку переходим где будем создавать проект создаем папку
+2) Создаем в ней одну для проекта
+3) запускаем python и создаем виртуальную среду  
+python3 -m venv env
+запускаем среду, ../env/Scripts/activate activate.bat для Linux
+устанавливаем flask и необходимые приложения pip install flask
+Пакеты необходимые
+pip install flask_sqlalchemy Работа с БД
+pip install flask_wtf - формы 
+pip install wtforms.validators - валидаторы
+pip install flask_login работа с логиными и видимостью страниц
+
+создаем файл pip freeze > requirements.txt  там записываются все пакеты что бы не устанавливать в ручную на другом устройстве или сервере вводим pip install -r requirements.txt и все пакеты подгружаются
+
+.gitignore файл что бы мусор не попадал в репазиторий
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+Создаем для нашей виртуальной среде запуск в саблайм
+	{ "keys": ["ctrl+6"], "command": "repl_open",
+"caption": "Python - RUN current file",
+"id": "repl_python_run",
+"mnemonic": "d",
+"args": {
+"type": "subprocess",
+"encoding": "utf8",
+"cmd": ["E:/py/taxi-minsk/env/Scripts/python.exe", "-u", "-i","$file_basename"],
+"cwd": "$file_path",
+"syntax": "Packages/Python/Python.tmLanguage",
+"external_id": "python",
+"extend_env": {"PYTHONIOENCODING": "utf-8"}
+}
+},
+
+]
+
+Проверяем если работает
+@app.route('/')
+@app.route('/index')
+def index():
+    return "Hello, World!"
+
+
+
+if __name__ == '__main__':
+		app.run(host=os.getenv('IP', '127.0.0.1'),
+			port=int(os.getenv('PORT', 4100)))
+
+
+Создаем файл для db.py для работы с БД

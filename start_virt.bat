@@ -1,0 +1,1 @@
+call "E:\py\taxi-minsk\env\Scripts\activate.bat"
